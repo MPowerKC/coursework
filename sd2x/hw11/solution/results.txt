@@ -1,0 +1,94 @@
+-----------------------------
+Goal: 32 sec (40% of orig)
+Orig: 81 sec
+-----------------------------
+# original version
+Execution time (wall clock): 86.458 seconds
+bwa242.txt-sra42.txt: 10
+bwa242.txt-bwa249.txt: 8
+edo20.txt-edo26.txt: 7
+bwa242.txt-ecu201.txt: 6
+
+# original version
+Execution time (wall clock): 83.683 seconds
+bwa242.txt-sra42.txt: 10
+bwa242.txt-bwa249.txt: 8
+edo20.txt-edo26.txt: 7
+bwa242.txt-ecu201.txt: 6
+
+# original version
+Execution time (wall clock): 81.817 seconds
+bwa242.txt-sra42.txt: 10
+bwa242.txt-bwa249.txt: 8
+edo20.txt-edo26.txt: 7
+bwa242.txt-ecu201.txt: 6
+
+# original version
+Execution time (wall clock): 81.847 seconds
+bwa242.txt-sra42.txt: 10
+bwa242.txt-bwa249.txt: 8
+edo20.txt-edo26.txt: 7
+bwa242.txt-ecu201.txt: 6
+
+# original version
+Execution time (wall clock): 85.983 seconds
+bwa242.txt-sra42.txt: 10
+bwa242.txt-bwa249.txt: 8
+edo20.txt-edo26.txt: 7
+bwa242.txt-ecu201.txt: 6
+
+# don't compare file to itself
+Execution time (wall clock): 74.069 seconds
+bwa242.txt-sra42.txt: 10
+bwa242.txt-bwa249.txt: 8
+edo20.txt-edo26.txt: 7
+bwa242.txt-ecu201.txt: 6
+
+# cache phrases
+Execution time (wall clock): 33.715 seconds
+bwa242.txt-sra42.txt: 10
+bwa242.txt-bwa249.txt: 8
+edo20.txt-edo26.txt: 7
+bwa242.txt-ecu201.txt: 6
+
+# check for null file1Phrases and file2Phrases separately
+Execution time (wall clock): 33.529 seconds
+bwa242.txt-sra42.txt: 10
+bwa242.txt-bwa249.txt: 8
+edo20.txt-edo26.txt: 7
+bwa242.txt-ecu201.txt: 6
+
+# close file handle in readFile method
+Execution time (wall clock): 33.937 seconds
+bwa242.txt-sra42.txt: 10
+bwa242.txt-bwa249.txt: 8
+edo20.txt-edo26.txt: 7
+bwa242.txt-ecu201.txt: 6
+
+# use lists for phrases
+Execution time (wall clock): 18.794 seconds
+bwa242.txt-sra42.txt: 10
+bwa242.txt-bwa249.txt: 8
+edo20.txt-edo26.txt: 7
+bwa242.txt-ecu201.txt: 6
+
+# use arraylist to read words from file
+Execution time (wall clock): 14.919 seconds
+bwa242.txt-sra42.txt: 10
+bwa242.txt-bwa249.txt: 8
+edo20.txt-edo26.txt: 7
+bwa242.txt-ecu201.txt: 6
+
+# Remove check for equalsIgnoreCase
+Execution time (wall clock): 12.774 seconds
+bwa242.txt-sra42.txt: 10
+bwa242.txt-bwa249.txt: 8
+edo20.txt-edo26.txt: 7
+bwa242.txt-ecu201.txt: 6
+
+# Lookup matches using sets
+Execution time (wall clock): 0.532 seconds
+bwa242.txt-sra42.txt: 10
+bwa242.txt-bwa249.txt: 8
+edo20.txt-edo26.txt: 7
+bwa242.txt-ecu201.txt: 6
