@@ -1,6 +1,6 @@
 
-public class Battleship extends Ship {
-	public Battleship() {
+public class BattleShip extends Ship {
+	public BattleShip() {
 		this.setLength(8);
 		this.setHit(new boolean[8]);
 	}

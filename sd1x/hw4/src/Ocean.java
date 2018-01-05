@@ -74,7 +74,7 @@ public class Ocean {
 		int count = 0;
 		
 		while(count < totalShips) {
-			if (addShip(rand, new Battleship()))
+			if (addShip(rand, new BattleShip()))
 				count++;
 		}
 	}
@@ -131,7 +131,7 @@ public class Ocean {
 
 		if (ship.okToPlaceShipAt(row, col, horizontal, this)) {
 			ship.placeShipAt(row, col, horizontal, this);
-			System.out.println(ship.getShipType() + " at " + row + "," + col + " " + horizontal);
+			//System.out.println(ship.getShipType() + " at " + row + "," + col + " " + horizontal);
 			return true;
 		}
 		
@@ -164,14 +164,21 @@ public class Ocean {
 	}
 	
 	public void print() {
-		System.out.print("  ");
+		System.out.println("                         == Game Board ==");
+		System.out.print("    ");
 		for (int i = 0; i < SIZE; i++) {
 			System.out.print(String.format("%02d ", i));
 		}
 		System.out.println();
+
+		System.out.print("    ");
+		for (int i = 0; i < SIZE; i++) {
+			System.out.print("__ ");
+		}
+		System.out.println();
 		
 		for (int i = 0; i < SIZE; i++) {
-			System.out.print(String.format("%02d", i));
+			System.out.print(String.format("%02d |", i));
 			for (int j = 0; j < SIZE; j++) {
 				if (!shots.contains(new Shot(i, j)))
 					System.out.print(" . ");
@@ -194,7 +201,7 @@ public class Ocean {
 		return shipsSunk;
 	}
 
-	public Ship[][] getShips() {
+	public Ship[][] getShipArray() {
 		return ships;
 	}
 }

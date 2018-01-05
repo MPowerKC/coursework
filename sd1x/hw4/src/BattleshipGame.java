@@ -15,15 +15,22 @@ public class BattleshipGame {
 	}
 	
 	public void start() {
-		while(!userQuitGame && ocean.getShipsSunk() < Ocean.TOTAL_SHIPS) {
+		printGameHeader();
+		
+		while(!userQuitGame && !ocean.isGameOver()) {
 			for(String shot : getUserShots()) {
+				if (shot.toLowerCase().equals("q")) {
+					userQuitGame = true;
+					break;
+				}
+				
 				String[] tokens = shot.split(",");
 				if (tokens.length == 2) {
 					int row = Integer.parseInt(tokens[0].trim());
 					int col = Integer.parseInt(tokens[1].trim());
 					if (ocean.shootAt(row, col)) {
 						System.out.println("hit");
-						Ship ship = ocean.getShips()[row][col];
+						Ship ship = ocean.getShipArray()[row][col];
 						if(ship.isSunk())
 							System.out.println("You just sank a " + ship.getShipType() + ".");
 					}
@@ -40,15 +47,25 @@ public class BattleshipGame {
 		}
 	}
 	
+	private void printGameHeader() {
+		System.out.println();
+		System.out.println(" ========================================================================= ");
+		System.out.println("===========================================================================");
+		System.out.println("===                           BATTLESHIP                                ===");
+		System.out.println("===========================================================================");
+		System.out.println(" ========================================================================= ");
+		System.out.println();
+		System.out.println("Enter your shots in the format {row},{col}, separated by semi-colons(;).");
+		System.out.println("For example: 1, 1; 0, 3; 7, 3");
+		System.out.println();
+	}
+	
 	public String[] getUserShots() {
 		Scanner scanner = null;
 
-		System.out.println("Enter your shots in the format {row},{col}, separated by semi-colons(;).");
-		System.out.println("The input format should look like this: 1, 1; 0, 3; 7, 3; 9, 11; 12, 17");
-
 		ocean.print();
 
-		System.out.print("shots: ");
+		System.out.print("Fire away: ");
 		
 		try {
 			scanner = new Scanner(System.in);
@@ -97,6 +114,7 @@ public class BattleshipGame {
 	
 	public static void displayGameResults(BattleshipGame game) {
 		game.getOcean().print();
+		System.out.println();
 		
 		if (game.getOcean().getShipsSunk() == Ocean.TOTAL_SHIPS)
 			System.out.println("You won, nice work! :D");
